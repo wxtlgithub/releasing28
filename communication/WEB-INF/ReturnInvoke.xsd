@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="qualified"
+        targetNamespace="http://www.bnet.cn/v3.0/"
+        xmlns:tns="http://www.bnet.cn/v3.0/">
+    <element name="Package">
+    </element>
+</schema>

@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!--NetworkUnit part -->
+	<bean id="networkUnit" class="com.lxt2.framework.NetworkUnit">
+		<property name="id" value="28" />
+		<property name="name" value="通信平台" />
+		<property name="invoker">
+			<ref local="networkUnitInvoker" />
+		</property>
+		<property name="isMain" value="true" />
+		<property name="commonFunctionMap">
+			<map>
+				<entry key="601" value-ref="hubImpl" />
+			</map>
+		</property>
+		<property name="commonTaskMap">
+			<map>
+				<entry key="1" value-ref="taskExecution" />
+				<entry key="2" value-ref="taskSchedule" />
+			</map>
+		</property>
+		<property name="taskMap">
+			<map>
+				<entry key="101" value-ref="ndClientVerifyTask" />
+				<entry key="106" value-ref="dwDirtyWordTask" />
+				<entry key="108" value-ref="mopDeliverSyncTask" />
+				<entry key="109" value-ref="phaseSyncAllTask1128" />
+				<entry key="110" value-ref="gatewayConfigLoadTask" />
+				<entry key="113" value-ref="PerformanceLoggerTask" />
+				<entry key="114" value-ref="clearHubTask" />
+				<entry key="115" value-ref="resClearTask" />
+				<entry key="118" value-ref="clearRespTask" />
+				<entry key="122" value-ref="clearHubTask2" />
+				<entry key="125" value-ref="gwDwDirtyWordTask" />
+				<entry key="12801" value-ref="mmsConnectionStateTask2801" />
+				<entry key="12802" value-ref="mmsConnectionStateTask2802" />
+				<entry key="12803" value-ref="mmsConnectionStateTask2803" />
+				<entry key="12804" value-ref="mmsConnectionStateTask2804" />
+				<entry key="12805" value-ref="mmsConnectionStateTask2805" />
+				<entry key="12806" value-ref="mmsConnectionStateTask2806" />
+				<entry key="12807" value-ref="mmsConnectionStateTask2807" />
+				<entry key="12808" value-ref="mmsConnectionStateTask2808" />
+				<entry key="12809" value-ref="mmsConnectionStateTask2809" />
+				<entry key="12810" value-ref="mmsConnectionStateTask2810" />
+				<entry key="12811" value-ref="mmsConnectionStateTask2811" />
+				<entry key="12812" value-ref="mmsConnectionStateTask2812" />
+				<entry key="12813" value-ref="mmsConnectionStateTask2813" />
+				<entry key="12814" value-ref="mmsConnectionStateTask2814" />
+				<entry key="12815" value-ref="mmsConnectionStateTask2815" />
+				<entry key="12816" value-ref="mmsConnectionStateTask2816" />
+				<entry key="12817" value-ref="mmsConnectionStateTask2817" />
+				<entry key="12818" value-ref="mmsConnectionStateTask2818" />
+				<entry key="12819" value-ref="mmsConnectionStateTask2819" />
+				<entry key="12820" value-ref="mmsConnectionStateTask2820" />
+				<entry key="12821" value-ref="mmsConnectionStateTask2821" />
+				<entry key="12822" value-ref="mmsConnectionStateTask2822" />
+				<entry key="12823" value-ref="mmsConnectionStateTask2823" />
+				<entry key="12824" value-ref="mmsConnectionStateTask2824" />
+				<entry key="12825" value-ref="mmsConnectionStateTask2825" />
+				<entry key="12826" value-ref="mmsConnectionStateTask2826" />
+				<entry key="12827" value-ref="mmsConnectionStateTask2827" />
+				<entry key="12828" value-ref="mmsConnectionStateTask2828" />
+				<entry key="12829" value-ref="mmsConnectionStateTask2829" />
+				<entry key="12830" value-ref="mmsConnectionStateTask2830" />
+				<entry key="12831" value-ref="mmsConnectionStateTask2831" />
+				<entry key="12832" value-ref="mmsConnectionStateTask2832" />
+				<entry key="12833" value-ref="mmsConnectionStateTask2833" />
+				<entry key="12834" value-ref="mmsConnectionStateTask2834" />
+				<entry key="12835" value-ref="mmsConnectionStateTask2835" />
+				<entry key="12836" value-ref="mmsConnectionStateTask2836" />
+				<entry key="12837" value-ref="mmsConnectionStateTask2837" />
+				<entry key="12838" value-ref="mmsConnectionStateTask2838" />
+				<entry key="12839" value-ref="mmsConnectionStateTask2839" />
+				<entry key="12840" value-ref="mmsConnectionStateTask2840" />
+				<entry key="12841" value-ref="mmsConnectionStateTask2841" />
+				<entry key="12842" value-ref="mmsConnectionStateTask2842" />
+				<entry key="12843" value-ref="mmsConnectionStateTask2843" />
+				<entry key="12844" value-ref="mmsConnectionStateTask2844" />
+				<entry key="12845" value-ref="mmsConnectionStateTask2845" />
+				<entry key="12846" value-ref="mmsConnectionStateTask2846" />
+				<entry key="12847" value-ref="mmsConnectionStateTask2847" />
+				<entry key="12848" value-ref="mmsConnectionStateTask2848" />
+				<entry key="12849" value-ref="mmsConnectionStateTask2849" />
+				<entry key="12850" value-ref="mmsConnectionStateTask2850" />
+				<entry key="12851" value-ref="mmsConnectionStateTask2851" />
+				<entry key="12852" value-ref="mmsConnectionStateTask2852" />
+				<entry key="12853" value-ref="mmsConnectionStateTask2853" />
+				<entry key="12854" value-ref="mmsConnectionStateTask2854" />
+				<entry key="12855" value-ref="mmsConnectionStateTask2855" />
+				<entry key="12856" value-ref="mmsConnectionStateTask2856" />
+				<entry key="12857" value-ref="mmsConnectionStateTask2857" />
+				<entry key="12858" value-ref="mmsConnectionStateTask2858" />
+				<entry key="12859" value-ref="mmsConnectionStateTask2859" />
+                           	<entry key="12860" value-ref="mmsConnectionStateTask2860" />
+                                <entry key="12864" value-ref="mmsConnectionStateTask2864" />
+                                <entry key="12865" value-ref="mmsConnectionStateTask2865" />
+			</map>
+		</property>
+		<property name="moduleMap">
+			<map>
+				<!-- <entry key="1028" value-ref="psModule1028" /> -->
+				<entry key="1128" value-ref="mtpModule1128" />
+
+				<entry key="1328" value-ref="rptModule1328" />
+				<entry key="1428" value-ref="mopModule1428" />
+				<entry key="1528" value-ref="clumpedModule1528" />
+				<entry key="2801" value-ref="mtsGatewayModule2801" />
+				<entry key="2802" value-ref="mtsGatewayModule2802" />
+				<entry key="2803" value-ref="mtsGatewayModule2803" />
+				<entry key="2804" value-ref="mtsGatewayModule2804" />
+				<entry key="2805" value-ref="mtsGatewayModule2805" />
+				<entry key="2806" value-ref="mtsGatewayModule2806" />
+				<entry key="2807" value-ref="mtsGatewayModule2807" />
+				<entry key="2808" value-ref="mtsGatewayModule2808" />
+				<entry key="2809" value-ref="mtsGatewayModule2809" />
+				<entry key="2810" value-ref="mtsGatewayModule2810" />
+				<entry key="2811" value-ref="mtsGatewayModule2811" />
+				<entry key="2812" value-ref="mtsGatewayModule2812" />
+				<entry key="2813" value-ref="mtsGatewayModule2813" />
+				<entry key="2814" value-ref="mtsGatewayModule2814" />
+				<entry key="2815" value-ref="mtsGatewayModule2815" />
+				<entry key="2816" value-ref="mtsGatewayModule2816" />
+				<entry key="2817" value-ref="mtsGatewayModule2817" />
+				<entry key="2818" value-ref="mtsGatewayModule2818" />
+				<entry key="2819" value-ref="mtsGatewayModule2819" />
+				<entry key="2820" value-ref="mtsGatewayModule2820" />
+				<entry key="2821" value-ref="mtsGatewayModule2821" />
+				<entry key="2822" value-ref="mtsGatewayModule2822" />
+				<entry key="2823" value-ref="mtsGatewayModule2823" />
+				<entry key="2824" value-ref="mtsGatewayModule2824" />
+				<entry key="2825" value-ref="mtsGatewayModule2825" />
+				<entry key="2826" value-ref="mtsGatewayModule2826" />
+				<entry key="2827" value-ref="mtsGatewayModule2827" />
+				<entry key="2828" value-ref="mtsGatewayModule2828" />
+				<entry key="2829" value-ref="mtsGatewayModule2829" />
+				<entry key="2830" value-ref="mtsGatewayModule2830" />
+				<entry key="2831" value-ref="mtsGatewayModule2831" />
+				<entry key="2832" value-ref="mtsGatewayModule2832" />
+				<entry key="2833" value-ref="mtsGatewayModule2833" />
+				<entry key="2834" value-ref="mtsGatewayModule2834" />
+				<entry key="2835" value-ref="mtsGatewayModule2835" />
+				<entry key="2836" value-ref="mtsGatewayModule2836" />
+				<entry key="2837" value-ref="mtsGatewayModule2837" />
+				<entry key="2838" value-ref="mtsGatewayModule2838" />
+				<entry key="2839" value-ref="mtsGatewayModule2839" />
+				<entry key="2840" value-ref="mtsGatewayModule2840" />
+				<entry key="2841" value-ref="mtsGatewayModule2841" />
+				<entry key="2842" value-ref="mtsGatewayModule2842" />
+				<entry key="2843" value-ref="mtsGatewayModule2843" />
+				<entry key="2844" value-ref="mtsGatewayModule2844" />
+				<entry key="2845" value-ref="mtsGatewayModule2845" />
+				<entry key="2846" value-ref="mtsGatewayModule2846" />
+				<entry key="2847" value-ref="mtsGatewayModule2847" />
+				<entry key="2848" value-ref="mtsGatewayModule2848" />
+				<entry key="2849" value-ref="mtsGatewayModule2849" />
+				<entry key="2850" value-ref="mtsGatewayModule2850" />
+				<entry key="2851" value-ref="mtsGatewayModule2851" />
+				<entry key="2852" value-ref="mtsGatewayModule2852" />
+				<entry key="2853" value-ref="mtsGatewayModule2853" />
+				<entry key="2854" value-ref="mtsGatewayModule2854" />
+				<entry key="2855" value-ref="mtsGatewayModule2855" />
+				<entry key="2856" value-ref="mtsGatewayModule2856" />
+				<entry key="2857" value-ref="mtsGatewayModule2857" />
+				<entry key="2858" value-ref="mtsGatewayModule2858" />
+				<entry key="2859" value-ref="mtsGatewayModule2859" />
+				<entry key="2860" value-ref="mtsGatewayModule2860" />
+				<entry key="2861" value-ref="mtsGatewayModule2861" />
+				<entry key="2862" value-ref="mtsGatewayModule2862" />
+				<entry key="2863" value-ref="mtsGatewayModule2863" />
+                                <entry key="2864" value-ref="mtsGatewayModule2864" />
+                                <entry key="2865" value-ref="mtsGatewayModule2865" />
+			</map>
+		</property>
+		<property name="subFunctionMap">
+			<map>
+				<entry key="1" value-ref="taskExecution" />
+				<entry key="2" value-ref="taskSchedule" />
+				<entry key="601" value-ref="hubImpl" />
+				<!-- <entry key="1028" value-ref="psModule1028" /> <entry key="1128" 
+					value-ref="mtpModule1128" /> -->
+				<entry key="1328" value-ref="rptModule1328" />
+				<entry key="1528" value-ref="clumpedModule1528" />
+				<entry key="1428" value-ref="mopModule1428" />
+
+
+				<entry key="2801" value-ref="mtsGatewayModule2801" />
+				<entry key="2802" value-ref="mtsGatewayModule2802" />
+				<entry key="2803" value-ref="mtsGatewayModule2803" />
+				<entry key="2804" value-ref="mtsGatewayModule2804" />
+				<entry key="2805" value-ref="mtsGatewayModule2805" />
+				<entry key="2806" value-ref="mtsGatewayModule2806" />
+				<entry key="2807" value-ref="mtsGatewayModule2807" />
+				<entry key="2808" value-ref="mtsGatewayModule2808" />
+				<entry key="2809" value-ref="mtsGatewayModule2809" />
+				<entry key="2810" value-ref="mtsGatewayModule2810" />
+				<entry key="2811" value-ref="mtsGatewayModule2811" />
+				<entry key="2812" value-ref="mtsGatewayModule2812" />
+				<entry key="2813" value-ref="mtsGatewayModule2813" />
+				<entry key="2814" value-ref="mtsGatewayModule2814" />
+				<entry key="2815" value-ref="mtsGatewayModule2815" />
+				<entry key="2816" value-ref="mtsGatewayModule2816" />
+				<entry key="2817" value-ref="mtsGatewayModule2817" />
+				<entry key="2818" value-ref="mtsGatewayModule2818" />
+				<entry key="2819" value-ref="mtsGatewayModule2819" />
+				<entry key="2820" value-ref="mtsGatewayModule2820" />
+				<entry key="2821" value-ref="mtsGatewayModule2821" />
+				<entry key="2822" value-ref="mtsGatewayModule2822" />
+				<entry key="2823" value-ref="mtsGatewayModule2823" />
+				<entry key="2824" value-ref="mtsGatewayModule2824" />
+				<entry key="2825" value-ref="mtsGatewayModule2825" />
+				<entry key="2826" value-ref="mtsGatewayModule2826" />
+				<entry key="2827" value-ref="mtsGatewayModule2827" />
+				<entry key="2828" value-ref="mtsGatewayModule2828" />
+				<entry key="2829" value-ref="mtsGatewayModule2829" />
+				<entry key="2830" value-ref="mtsGatewayModule2830" />
+				<entry key="2831" value-ref="mtsGatewayModule2831" />
+				<entry key="2832" value-ref="mtsGatewayModule2832" />
+				<entry key="2833" value-ref="mtsGatewayModule2833" />
+				<entry key="2834" value-ref="mtsGatewayModule2834" />
+				<entry key="2835" value-ref="mtsGatewayModule2835" />
+				<entry key="2836" value-ref="mtsGatewayModule2836" />
+				<entry key="2837" value-ref="mtsGatewayModule2837" />
+				<entry key="2838" value-ref="mtsGatewayModule2838" />
+				<entry key="2839" value-ref="mtsGatewayModule2839" />
+				<entry key="2840" value-ref="mtsGatewayModule2840" />
+				<entry key="2841" value-ref="mtsGatewayModule2841" />
+				<entry key="2842" value-ref="mtsGatewayModule2842" />
+				<entry key="2843" value-ref="mtsGatewayModule2843" />
+				<entry key="2844" value-ref="mtsGatewayModule2844" />
+				<entry key="2845" value-ref="mtsGatewayModule2845" />
+				<entry key="2846" value-ref="mtsGatewayModule2846" />
+				<entry key="2847" value-ref="mtsGatewayModule2847" />
+				<entry key="2848" value-ref="mtsGatewayModule2848" />
+				<entry key="2849" value-ref="mtsGatewayModule2849" />
+				<entry key="2850" value-ref="mtsGatewayModule2850" />
+				<entry key="2851" value-ref="mtsGatewayModule2851" />
+				<entry key="2852" value-ref="mtsGatewayModule2852" />
+				<entry key="2853" value-ref="mtsGatewayModule2853" />
+				<entry key="2854" value-ref="mtsGatewayModule2854" />
+				<entry key="2855" value-ref="mtsGatewayModule2855" />
+				<entry key="2856" value-ref="mtsGatewayModule2856" />
+				<entry key="2857" value-ref="mtsGatewayModule2857" />
+				<entry key="2858" value-ref="mtsGatewayModule2858" />
+				<entry key="2859" value-ref="mtsGatewayModule2859" />
+				<entry key="2860" value-ref="mtsGatewayModule2860" />
+				<entry key="2861" value-ref="mtsGatewayModule2861" />
+				<entry key="2862" value-ref="mtsGatewayModule2862" />
+				<entry key="2863" value-ref="mtsGatewayModule2863" />
+				<entry key="9999" value-ref="reloadFunction" />
+			        <entry key="2864" value-ref="mtsGatewayModule2864" />
+                                <entry key="2865" value-ref="mtsGatewayModule2865" />
+                         </map>
+		</property>
+		<property name="taskSchedule">
+			<ref local="taskSchedule" />
+		</property>
+		<property name="taskExecution">
+			<ref local="taskExecution" />
+		</property>
+	</bean>
+
+	<!--CommonTask part -->
+	<bean id="taskExecution" class="com.lxt2.framework.TaskExecution">
+		<property name="id" value="1" />
+		<property name="name" value="任务执行" />
+		<property name="taskType">
+			<value type="com.lxt2.framework.base.TaskType">HOST</value>
+		</property>
+		<property name="corePoolSize" value="100" />
+		<property name="maxPoolSize" value="200" />
+	</bean>
+	<bean id="taskSchedule" class="com.lxt2.framework.TaskSchedule">
+		<property name="id" value="2" />
+		<property name="name" value="任务调度" />
+		<property name="taskType">
+			<value type="com.lxt2.framework.base.TaskType">HOST</value>
+		</property>
+	</bean>
+	<!--Task part Start -->
+
+	<!--Invoker part -->
+	<bean id="networkUnitInvoker" class="com.lxt2.framework.control.NetworkUnitInvoker">
+		<property name="remoteVisitControl">
+			<ref local="webVisitControl" />
+		</property>
+		<property name="commandMap">
+			<map>
+				<entry key="start" value-ref="start" />
+				<entry key="pause" value-ref="pause" />
+				<entry key="resume" value-ref="resume" />
+				<entry key="stop" value-ref="stop" />
+				<entry key="exe" value-ref="exe" />
+				<entry key="add" value-ref="add" />
+				<entry key="remove" value-ref="remove" />
+				<entry key="list" value-ref="list" />
+				<entry key="listc" value-ref="listc" />
+				<entry key="listm" value-ref="listm" />
+				<entry key="listt" value-ref="listt" />
+				<entry key="liste" value-ref="liste" />
+				<entry key="listf" value-ref="listf" />
+				<entry key="queue" value-ref="queue" />
+				<entry key="view" value-ref="view" />
+				<entry key="viewall" value-ref="viewall" />
+			</map>
+		</property>
+	</bean>
+	<!--Visit control part -->
+	<bean id="webVisitControl" class="com.lxt2.framework.control.WebVisitControl">
+	</bean>
+	<!--Command part -->
+	<!-- <bean id="viewall" class="com.lxt2.serverframe.networkunit.command.ViewAllCmd"> -->
+	<!-- <property name="node"> -->
+	<!-- <ref local="networkUnit" /> -->
+	<!-- </property> -->
+	<!-- </bean> -->
+	<bean id="start" class="com.lxt2.framework.command.StartCmd" />
+	<bean id="pause" class="com.lxt2.framework.command.PauseCmd" />
+	<bean id="resume" class="com.lxt2.framework.command.ResumeCmd" />
+	<bean id="stop" class="com.lxt2.framework.command.StopCmd" />
+	<bean id="exe" class="com.lxt2.framework.command.ExecuteCmd" />
+	<bean id="add" class="com.lxt2.framework.command.AddTaskCmd" />
+	<bean id="remove" class="com.lxt2.framework.command.RemoveTaskCmd" />
+	<bean id="listm" class="com.lxt2.framework.command.ListModuleCmd" />
+	<bean id="list" class="com.lxt2.framework.command.ListCmd" />
+	<bean id="listc" class="com.lxt2.framework.command.ListCommonTaskCmd" />
+	<bean id="listt" class="com.lxt2.framework.command.ListScheduleTaskCmd" />
+	<bean id="liste" class="com.lxt2.framework.command.ListExecutionCmd" />
+	<bean id="listf" class="com.lxt2.framework.command.ListFunctionCmd" />
+	<bean id="view" class="com.lxt2.framework.command.ViewCmd" />
+	<bean id="viewall" class="com.lxt2.base.command.ViewAllCmd" />
+
+	<!-- 网元所有队列性能监视 -->
+	<bean id="queue" class="com.lxt2.framework.command.QueueMonitorCmd">
+	</bean>
+
+	<bean id="sysconfighelper" class="com.lxt2.framework.util.SysConfigHelper"
+		init-method="init">
+		<property name="configXmlPath" value="/28/config/systemconfig.xml" />
+	</bean>
+
+	<bean id="confighelper" class="com.lxt2.common.common.util.ConfigHelper"
+		init-method="init">
+		<property name="configPath" value="/28/config/config_*.xml" />
+	</bean>
+
+	<bean id="systemConfig" class="com.lxt2.base.CommunicateHelper" />
+
+	<bean id="staticHandle" class="com.lxt2.framework.util.GlobleStaticHandler"
+		init-method="init">
+		<property name="networkUnit" ref="networkUnit" />
+	</bean>
+
+	<bean id="ndSid" class="com.lxt2.base.persist.SID">
+		<property name="nodeId" value="28" />
+	</bean>
+
+	<bean id="ndMobileValidator" class="com.standardsm.phasenew.DefaultMobileValidator"
+		init-method="init" />
+
+	<bean id="ndNodeRefresh" class="com.lxt2.base.node.NodeRefreshThread"
+		init-method="init" destroy-method="destroy">
+		<property name="hub" ref="hubImpl" />
+	</bean>
+</beans>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="mtsGatewayModule2830" class="com.lxt2.mmsgateway.module.MmsGatewayModule">
+		<property name="id" value="2830"/>
+		<property name="name" value="下行发送MMS"/>
+		<property name="hub" ref="hubImpl"/>
+		<property name="submitQueue" ref="mmsSubmitQueue2830"/>
+		<property name="mmsSendQueue" ref="mmsSendQueue2830"/>
+		<property name="status" value="STOP"/>
+		<property name="configList">
+			<list>
+				<ref bean="mmsgConstants2830"/>
+				<ref bean="mmsSender2830"/>
+				<ref bean="mmsSpeedControlFilter2830"/>
+			</list>
+		</property>
+		<!-- 命令集合 -->
+		<property name="controlCmdMap">
+			<map>
+				<entry key="qePerf" value-ref="mtsQueueCmd2830"/>
+				<entry key="view" value-ref="mtsGateWayViewCmd2830"/>
+			</map>
+		</property>
+		<!-- 指标集合 -->
+		<property name="kpiList">
+			<list>
+				<ref bean="mtsSubmitQueueKPI2830"/>
+				<ref bean="mtsGateWayModuleKPI2830"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="mtsQueueCmd2830" class="com.lxt2.queuekc.QueuePerfCmd">
+		<property name="kpiQueueList">
+			<list>
+				<ref bean="mtsSubmitQueueKPI2830"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="mtsSubmitQueueKPI2830" class="com.lxt2.queuekc.QueueKPI">
+		<property name="queue" ref="mmsSubmitQueue2830"/>
+	</bean>
+	
+	    <!-- 获取模块的监视信息 -->
+	<bean id="mtsGateWayViewCmd2830" class="com.lxt2.base.module.ModuleKPICmd">
+		<property name="kpi" ref="mtsGateWayModuleKPI2830"/>
+	</bean>
+	
+	<bean id="mtsGateWayModuleKPI2830" class="com.lxt2.mmsgateway.module.MmsGatewayModuleKPI">
+        <property name="cacheQueue" ref="mmsSubmitQueue2830"/>
+        <property name="dataGather" ref="mtsDataGather2830"/>
+        <property name="module" ref="mtsGatewayModule2830"/>
+    </bean>
+    
+	<bean id="mtsDataGather2830" class="com.lxt2.mmsgateway.service.GatewayDataGather" init-method="init" destroy-method="destroy">
+    	<property name="path" value="${CLASSPATH}/${nodeID}/persistent/statistics/gateway2830.properties"/>
+    </bean>
+    
+	<bean id="mmsConnectionStateTask2830" class="com.lxt2.mmsgateway.monitor.MMSConnectionStateTask">
+		<property name="id" value="12830"/>
+		<property name="name" value="2830彩信网关连接状态监测"/>
+    	<property name="dataGather" ref="mtsDataGather2830"/>
+    	<property name="mmsgConstants" ref="mmsgConstants2830"/>
+		<property name="taskSchRule" value="@{cycle(60)}" />
+		<property name="module" ref="mtsGatewayModule2830" />
+    </bean>
+
+</beans>

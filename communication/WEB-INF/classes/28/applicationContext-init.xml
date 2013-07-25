@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>28/communicate/lxt_oracle.properties</value>
+				<value>28/communicate/communicate.properties</value>
+				<value>28/communicate/mmsg.properties</value>
+			</list>
+		</property>
+	</bean>
+	<import resource="lxt_node.xml" />
+	<import resource="communicate/common/lxt_dbcp.xml" />
+	<import resource="communicate/common/lxt_oracle.xml" />
+	<import resource="communicate/common/hub.xml" />
+	<import resource="communicate/common/lxt_clientinfo.xml" />
+	<import resource="communicate/common/mts_common.xml" />
+	<import resource="communicate/common/resource_center.xml" />
+	<import resource="communicate/mtprocess/mtp_specialmobile.xml" />
+	<import resource="communicate/mtprocess/mtp_phase.xml" />
+	<import resource="communicate/mtprocess/mtp_mod_1128.xml" />
+	<import resource="communicate/mtprocess/mtp_1128.xml" />
+	<import resource="communicate/mtprocess/mtp_router.xml" />
+	<import resource="communicate/mtprocess/mtp_blacklist.xml" />
+	<import resource="communicate/mtprocess/mtp_blacklistMMS.xml" />
+	<import resource="communicate/mtprocess/mtp_keyword.xml" />
+	<import resource="communicate/mtprocess/mtp_keyword_gw.xml" />
+	<import resource="communicate/moprocess/mop_mod_1428.xml" />
+	<import resource="communicate/moprocess/mop_1428.xml" />
+	<import resource="communicate/moprocess/mop_router.xml" />
+	<import resource="communicate/rptprocess/rpt_mod_1328.xml" />
+	<!--import resource="communicate/clumped/Clumped_Mod_1528.xml" -->
+	<import resource="communicate/mclumped/Clumped_Mod_1528.xml" />
+	<import resource="communicate/mclumped/Clumped_config_1528.xml" />
+	<import resource="communicate/common/mime_context.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2801_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2801_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2801_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2801_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2801_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2802_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2802_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2802_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2802_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2802_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2803_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2803_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2803_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2803_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2803_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2804_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2804_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2804_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2804_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2804_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2805_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2805_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2805_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2805_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2805_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2806_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2806_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2806_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2806_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2806_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2807_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2807_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2807_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2807_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2807_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2808_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2808_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2808_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2808_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2808_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2809_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2809_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2809_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2809_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2809_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2810_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2810_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2810_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2810_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2810_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2811_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2811_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2811_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2811_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2811_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2812_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2812_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2812_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2812_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2812_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2813_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2813_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2813_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2813_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2813_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2814_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2814_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2814_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2814_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2814_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2815_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2815_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2815_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2815_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2815_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2816_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2816_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2816_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2816_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2816_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2817_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2817_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2817_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2817_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2817_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2818_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2818_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2818_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2818_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2818_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2819_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2819_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2819_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2819_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2819_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2820_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2820_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2820_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2820_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2820_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2821_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2821_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2821_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2821_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2821_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2822_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2822_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2822_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2822_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2822_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2823_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2823_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2823_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2823_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2823_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2824_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2824_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2824_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2824_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2824_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2825_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2825_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2825_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2825_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2825_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2826_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2826_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2826_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2826_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2826_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2827_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2827_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2827_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2827_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2827_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2828_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2828_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2828_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2828_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2828_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2829_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2829_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2829_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2829_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2829_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2830_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2830_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2830_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2830_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2830_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2831_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2831_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2831_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2831_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2831_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2832_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2832_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2832_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2832_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2832_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2833_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2833_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2833_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2833_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2833_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2834_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2834_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2834_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2834_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2834_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2835_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2835_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2835_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2835_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2835_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2836_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2836_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2836_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2836_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2836_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2837_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2837_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2837_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2837_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2837_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2838_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2838_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2838_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2838_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2838_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2839_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2839_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2839_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2839_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2839_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2840_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2840_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2840_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2840_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2840_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2841_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2841_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2841_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2841_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2841_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2842_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2842_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2842_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2842_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2842_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2843_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2843_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2843_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2843_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2843_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2844_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2844_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2844_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2844_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2844_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2845_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2845_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2845_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2845_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2845_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2846_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2846_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2846_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2846_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2846_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2847_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2847_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2847_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2847_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2847_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2848_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2848_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2848_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2848_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2848_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2849_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2849_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2849_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2849_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2849_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2850_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2850_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2850_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2850_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2850_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2851_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2851_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2851_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2851_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2851_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2852_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2852_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2852_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2852_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2852_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2853_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2853_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2853_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2853_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2853_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2854_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2854_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2854_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2854_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2854_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2855_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2855_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2855_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2855_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2855_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2856_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2856_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2856_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2856_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2856_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2857_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2857_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2857_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2857_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2857_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2858_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2858_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2858_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2858_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2858_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2859_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2859_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2859_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2859_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2859_mod.xml" />
+	<!--mm7网关 -->
+	<import resource="communicate/mtsubmit/mms/2860_constants.xml" />
+	<import resource="communicate/mtsubmit/mms/2860_gateway.xml" />
+	<import resource="communicate/mtsubmit/mms/2860_queue.xml" />
+	<import resource="communicate/mtsubmit/mms/2860_listenerfilters.xml" />
+	<import resource="communicate/mtsubmit/mms/2860_mod.xml" />
+	<!-- csa -->
+	<import resource="communicate/mtsubmit/sms/2861_mod.xml" />
+	<import resource="communicate/mtsubmit/sms/2861_csa.xml" />
+	<!-- cbip10 -->
+	<import resource="communicate/mtsubmit/sms/2862_mod.xml" />
+	<import resource="communicate/mtsubmit/sms/2862_cbip10.xml" />
+	<!-- cbip20 -->
+	<import resource="communicate/mtsubmit/sms/2863_mod.xml" />
+	<import resource="communicate/mtsubmit/sms/2863_cbip20.xml" />
+	<!--全网电信彩信网关 -->
+        <import resource="communicate/mtsubmit/mms/2864_constants.xml" />
+        <import resource="communicate/mtsubmit/mms/2864_gateway.xml" />
+        <import resource="communicate/mtsubmit/mms/2864_queue.xml" />
+        <import resource="communicate/mtsubmit/mms/2864_listenerfilters.xml" />
+  	<import resource="communicate/mtsubmit/mms/2864_mod.xml" />
+        <!--上海电信彩信网关 -->
+  	<import resource="communicate/mtsubmit/mms/2865_constants.xml" />
+  	<import resource="communicate/mtsubmit/mms/2865_gateway.xml" />
+  	<import resource="communicate/mtsubmit/mms/2865_queue.xml" />
+  	<import resource="communicate/mtsubmit/mms/2865_listenerfilters.xml" />
+  	<import resource="communicate/mtsubmit/mms/2865_mod.xml" />
+</beans>

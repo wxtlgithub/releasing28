@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="mtsGatewayModule2863" class="com.lxt2.gateway.cbip.module.CbipGatewayModule" >
+        <property name="coagentSender" ref="mtsCoagentSender2863"/>
+		<property name="hub" ref="hubImpl"/>
+		<property name="id" value="2863"/>
+		<property name="name" value="下行发送CBIP20"/>
+		<property name="clientEngine" ref="mtsClientEngine2863"/>
+		<property name="submitQueue" ref="mtsSubmitQueue2863"/>
+		<property name="status" value="STOP"/>
+		<!-- 命令集合 -->
+		<property name="controlCmdMap">
+			<map>
+				<entry key="qePerf" value-ref="mtsQueueCmd2863"/>
+                <entry key="view" value-ref="mtsGateWayViewCmd2863"/>
+			</map>
+		</property>
+		<!-- 指标集合 -->
+		<property name="kpiList">
+			<list>
+				<ref bean="mtsQueueKPI2863"/>
+                <ref bean="cbipGatewayModuleKPI2863"/>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 模块的指标配置 -->
+	<bean id="mtsQueueKPI2863" class="com.lxt2.queuekc.QueueKPI">
+		<property name="queue" ref="mtsQueuecache2863"/>
+	</bean>
+    <bean id="cbipGatewayModuleKPI2863" class="com.lxt2.gateway.cbip.module.kpi.CbipGatewayModuleKPI">
+        <property name="cacheQueue" ref="mtsQueuecache2863"/>
+        <property name="dataGather" ref="cbipGatewayDataGather2863"/>
+        <property name="module" ref="mtsGatewayModule2863"/>
+    </bean>
+	<!-- 模块的命令配置 -->
+	<bean id="mtsQueueCmd2863" class="com.lxt2.queuekc.QueuePerfCmd">
+		<property name="kpiQueueList">
+			<list>
+				<ref bean="mtsQueueKPI2863"/>
+			</list>
+		</property>
+	</bean>
+    <bean id="mtsGateWayViewCmd2863" class="com.lxt2.base.module.ModuleKPICmd">
+        <property name="kpi" ref="cbipGatewayModuleKPI2863"/>
+    </bean>
+    <bean id="cbipGatewayDataGather2863" class="com.lxt2.gateway.cbip.module.kpi.CbipGatewayDataGather" init-method="init" destroy-method="destroy">
+    	<property name="path" value="${CLASSPATH}/${nodeID}/persistent/statistics/gateway2863.properties"/>
+    </bean>
+</beans>
